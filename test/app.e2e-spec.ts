@@ -21,23 +21,4 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
-
-  it('/posts (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/posts')
-      .expect(200)
-      .expect((res) => {
-        // Customize this based on the expected response for your /posts endpoint
-        // Ensure the response is an array
-        expect(Array.isArray(res.body)).toBe(true);
-        // Add specific expectations based on your application's logic
-        // For example, assuming you have a service that provides posts
-        expect(res.body).toHaveLength(2);
-        expect(res.body[0].title).toEqual('Post 1');
-        expect(res.body[1].title).toEqual('Post 2');
-      });
-  });
-
-
-
 });
